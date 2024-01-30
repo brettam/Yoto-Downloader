@@ -60,6 +60,7 @@ partial class yotoDLForm
         lbl_Title = new Label();
         pbx_loadingGif = new PictureBox();
         btnOpenFolder = new Button();
+        cbxSaveDefaultFolder = new CheckBox();
         groupBox1.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pbx_loadingGif).BeginInit();
         SuspendLayout();
@@ -68,7 +69,7 @@ partial class yotoDLForm
         // 
         tbxUrl.Font = new Font("Arial", 12F);
         tbxUrl.ForeColor = Color.DimGray;
-        tbxUrl.Location = new Point(89, 43);
+        tbxUrl.Location = new Point(89, 31);
         tbxUrl.Name = "tbxUrl";
         tbxUrl.Size = new Size(622, 26);
         tbxUrl.TabIndex = 1;
@@ -77,7 +78,7 @@ partial class yotoDLForm
         // label1
         // 
         label1.AutoSize = true;
-        label1.Location = new Point(45, 46);
+        label1.Location = new Point(45, 34);
         label1.Name = "label1";
         label1.Size = new Size(38, 22);
         label1.TabIndex = 1;
@@ -87,7 +88,7 @@ partial class yotoDLForm
         // 
         tbxStartHr.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         tbxStartHr.Enabled = false;
-        tbxStartHr.Location = new Point(82, 55);
+        tbxStartHr.Location = new Point(81, 56);
         tbxStartHr.MaxLength = 2;
         tbxStartHr.Name = "tbxStartHr";
         tbxStartHr.PlaceholderText = "00";
@@ -99,7 +100,7 @@ partial class yotoDLForm
         // 
         tbxStartMin.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         tbxStartMin.Enabled = false;
-        tbxStartMin.Location = new Point(137, 55);
+        tbxStartMin.Location = new Point(136, 56);
         tbxStartMin.MaxLength = 2;
         tbxStartMin.Name = "tbxStartMin";
         tbxStartMin.PlaceholderText = "00";
@@ -111,9 +112,9 @@ partial class yotoDLForm
         // 
         label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         label2.AutoSize = true;
-        label2.BackColor = Color.FromArgb(127, 140, 134);
+        label2.BackColor = Color.FromArgb(170, 154, 154);
         label2.FlatStyle = FlatStyle.System;
-        label2.Location = new Point(116, 58);
+        label2.Location = new Point(115, 59);
         label2.Name = "label2";
         label2.Size = new Size(15, 22);
         label2.TabIndex = 0;
@@ -124,9 +125,9 @@ partial class yotoDLForm
         // 
         label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         label3.AutoSize = true;
-        label3.BackColor = Color.FromArgb(127, 140, 134);
+        label3.BackColor = Color.FromArgb(170, 154, 154);
         label3.FlatStyle = FlatStyle.System;
-        label3.Location = new Point(171, 58);
+        label3.Location = new Point(170, 59);
         label3.Name = "label3";
         label3.Size = new Size(15, 22);
         label3.TabIndex = 4;
@@ -137,7 +138,7 @@ partial class yotoDLForm
         // 
         tbxStartSec.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         tbxStartSec.Enabled = false;
-        tbxStartSec.Location = new Point(192, 55);
+        tbxStartSec.Location = new Point(191, 56);
         tbxStartSec.MaxLength = 2;
         tbxStartSec.Name = "tbxStartSec";
         tbxStartSec.PlaceholderText = "00";
@@ -149,7 +150,7 @@ partial class yotoDLForm
         // 
         label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         label4.AutoSize = true;
-        label4.Location = new Point(22, 58);
+        label4.Location = new Point(21, 59);
         label4.Name = "label4";
         label4.Size = new Size(54, 22);
         label4.TabIndex = 6;
@@ -159,7 +160,7 @@ partial class yotoDLForm
         // 
         label5.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         label5.AutoSize = true;
-        label5.Location = new Point(272, 58);
+        label5.Location = new Point(271, 59);
         label5.Name = "label5";
         label5.Size = new Size(49, 22);
         label5.TabIndex = 12;
@@ -169,9 +170,9 @@ partial class yotoDLForm
         // 
         label6.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         label6.AutoSize = true;
-        label6.BackColor = Color.FromArgb(127, 140, 134);
+        label6.BackColor = Color.FromArgb(170, 154, 154);
         label6.FlatStyle = FlatStyle.System;
-        label6.Location = new Point(416, 58);
+        label6.Location = new Point(415, 59);
         label6.Name = "label6";
         label6.Size = new Size(15, 22);
         label6.TabIndex = 10;
@@ -182,7 +183,7 @@ partial class yotoDLForm
         // 
         tbxEndSec.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         tbxEndSec.Enabled = false;
-        tbxEndSec.Location = new Point(437, 55);
+        tbxEndSec.Location = new Point(436, 56);
         tbxEndSec.MaxLength = 2;
         tbxEndSec.Name = "tbxEndSec";
         tbxEndSec.PlaceholderText = "00";
@@ -194,9 +195,9 @@ partial class yotoDLForm
         // 
         label7.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         label7.AutoSize = true;
-        label7.BackColor = Color.FromArgb(127, 140, 134);
+        label7.BackColor = Color.FromArgb(170, 154, 154);
         label7.FlatStyle = FlatStyle.System;
-        label7.Location = new Point(361, 58);
+        label7.Location = new Point(360, 59);
         label7.Name = "label7";
         label7.Size = new Size(15, 22);
         label7.TabIndex = 7;
@@ -207,7 +208,7 @@ partial class yotoDLForm
         // 
         tbxEndMin.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         tbxEndMin.Enabled = false;
-        tbxEndMin.Location = new Point(382, 55);
+        tbxEndMin.Location = new Point(381, 56);
         tbxEndMin.MaxLength = 2;
         tbxEndMin.Name = "tbxEndMin";
         tbxEndMin.PlaceholderText = "00";
@@ -219,7 +220,7 @@ partial class yotoDLForm
         // 
         tbxEndHr.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         tbxEndHr.Enabled = false;
-        tbxEndHr.Location = new Point(327, 55);
+        tbxEndHr.Location = new Point(326, 56);
         tbxEndHr.MaxLength = 2;
         tbxEndHr.Name = "tbxEndHr";
         tbxEndHr.PlaceholderText = "00";
@@ -232,7 +233,7 @@ partial class yotoDLForm
         label8.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         label8.AutoSize = true;
         label8.Font = new Font("Georgia", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-        label8.Location = new Point(83, 30);
+        label8.Location = new Point(82, 31);
         label8.Name = "label8";
         label8.Size = new Size(27, 18);
         label8.TabIndex = 13;
@@ -243,7 +244,7 @@ partial class yotoDLForm
         label9.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         label9.AutoSize = true;
         label9.Font = new Font("Georgia", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-        label9.Location = new Point(134, 30);
+        label9.Location = new Point(133, 31);
         label9.Name = "label9";
         label9.Size = new Size(35, 18);
         label9.TabIndex = 14;
@@ -254,7 +255,7 @@ partial class yotoDLForm
         label10.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         label10.AutoSize = true;
         label10.Font = new Font("Georgia", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-        label10.Location = new Point(192, 30);
+        label10.Location = new Point(191, 31);
         label10.Name = "label10";
         label10.Size = new Size(30, 18);
         label10.TabIndex = 15;
@@ -265,7 +266,7 @@ partial class yotoDLForm
         label11.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         label11.AutoSize = true;
         label11.Font = new Font("Georgia", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-        label11.Location = new Point(437, 30);
+        label11.Location = new Point(436, 31);
         label11.Name = "label11";
         label11.Size = new Size(30, 18);
         label11.TabIndex = 18;
@@ -276,7 +277,7 @@ partial class yotoDLForm
         label12.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         label12.AutoSize = true;
         label12.Font = new Font("Georgia", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-        label12.Location = new Point(379, 30);
+        label12.Location = new Point(378, 31);
         label12.Name = "label12";
         label12.Size = new Size(35, 18);
         label12.TabIndex = 17;
@@ -287,7 +288,7 @@ partial class yotoDLForm
         label13.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         label13.AutoSize = true;
         label13.Font = new Font("Georgia", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-        label13.Location = new Point(328, 30);
+        label13.Location = new Point(327, 31);
         label13.Name = "label13";
         label13.Size = new Size(27, 18);
         label13.TabIndex = 16;
@@ -316,9 +317,9 @@ partial class yotoDLForm
         groupBox1.Controls.Add(tbxEndSec);
         groupBox1.FlatStyle = FlatStyle.System;
         groupBox1.ForeColor = SystemColors.ControlText;
-        groupBox1.Location = new Point(153, 147);
+        groupBox1.Location = new Point(153, 132);
         groupBox1.Name = "groupBox1";
-        groupBox1.Size = new Size(482, 135);
+        groupBox1.Size = new Size(482, 136);
         groupBox1.TabIndex = 3;
         groupBox1.TabStop = false;
         groupBox1.Text = "Settings";
@@ -330,7 +331,7 @@ partial class yotoDLForm
         cbx_Full.Checked = true;
         cbx_Full.CheckState = CheckState.Checked;
         cbx_Full.Font = new Font("Arial", 12F);
-        cbx_Full.Location = new Point(169, 107);
+        cbx_Full.Location = new Point(170, 108);
         cbx_Full.Name = "cbx_Full";
         cbx_Full.Size = new Size(166, 22);
         cbx_Full.TabIndex = 0;
@@ -342,7 +343,7 @@ partial class yotoDLForm
         // 
         label15.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
         label15.AutoSize = true;
-        label15.Location = new Point(12, 308);
+        label15.Location = new Point(12, 300);
         label15.Name = "label15";
         label15.Size = new Size(135, 22);
         label15.TabIndex = 22;
@@ -351,7 +352,7 @@ partial class yotoDLForm
         // tbxFolder
         // 
         tbxFolder.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-        tbxFolder.Location = new Point(153, 305);
+        tbxFolder.Location = new Point(153, 297);
         tbxFolder.Name = "tbxFolder";
         tbxFolder.PlaceholderText = "c:\\";
         tbxFolder.Size = new Size(482, 29);
@@ -373,9 +374,9 @@ partial class yotoDLForm
         // 
         btnOpenFolderDia.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
         btnOpenFolderDia.Font = new Font("Arial", 12F);
-        btnOpenFolderDia.Location = new Point(641, 305);
+        btnOpenFolderDia.Location = new Point(641, 294);
         btnOpenFolderDia.Name = "btnOpenFolderDia";
-        btnOpenFolderDia.Size = new Size(44, 29);
+        btnOpenFolderDia.Size = new Size(46, 34);
         btnOpenFolderDia.TabIndex = 2;
         btnOpenFolderDia.TextAlign = ContentAlignment.TopCenter;
         btnOpenFolderDia.UseVisualStyleBackColor = true;
@@ -399,7 +400,7 @@ partial class yotoDLForm
         label16.AutoSize = true;
         label16.Font = new Font("Calibri", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
         label16.ForeColor = Color.FromArgb(128, 36, 0);
-        label16.Location = new Point(232, 78);
+        label16.Location = new Point(232, 66);
         label16.Name = "label16";
         label16.Size = new Size(326, 23);
         label16.TabIndex = 27;
@@ -424,7 +425,7 @@ partial class yotoDLForm
         pbx_loadingGif.BackColor = Color.Transparent;
         pbx_loadingGif.BackgroundImageLayout = ImageLayout.None;
         pbx_loadingGif.Image = (Image)resources.GetObject("pbx_loadingGif.Image");
-        pbx_loadingGif.Location = new Point(367, 78);
+        pbx_loadingGif.Location = new Point(367, 66);
         pbx_loadingGif.Name = "pbx_loadingGif";
         pbx_loadingGif.Size = new Size(70, 70);
         pbx_loadingGif.SizeMode = PictureBoxSizeMode.Zoom;
@@ -438,19 +439,32 @@ partial class yotoDLForm
         btnOpenFolder.Font = new Font("Arial", 12F);
         btnOpenFolder.Location = new Point(12, 360);
         btnOpenFolder.Name = "btnOpenFolder";
-        btnOpenFolder.Size = new Size(135, 31);
+        btnOpenFolder.Size = new Size(124, 31);
         btnOpenFolder.TabIndex = 30;
         btnOpenFolder.Text = "Open Directory";
         btnOpenFolder.UseVisualStyleBackColor = true;
+        btnOpenFolder.Click += btnOpenFolder_Click;
+        // 
+        // cbxSaveDefaultFolder
+        // 
+        cbxSaveDefaultFolder.AutoSize = true;
+        cbxSaveDefaultFolder.Font = new Font("Arial", 12F, FontStyle.Italic);
+        cbxSaveDefaultFolder.Location = new Point(160, 332);
+        cbxSaveDefaultFolder.Name = "cbxSaveDefaultFolder";
+        cbxSaveDefaultFolder.Size = new Size(191, 23);
+        cbxSaveDefaultFolder.TabIndex = 31;
+        cbxSaveDefaultFolder.Text = "Save as Default Folder";
+        cbxSaveDefaultFolder.UseVisualStyleBackColor = true;
         // 
         // yotoDLForm
         // 
         AcceptButton = btnProcess;
         AutoScaleDimensions = new SizeF(11F, 22F);
         AutoScaleMode = AutoScaleMode.Font;
-        BackColor = Color.FromArgb(127, 140, 134);
+        BackColor = Color.FromArgb(170, 154, 154);
         CancelButton = btnCancel;
         ClientSize = new Size(784, 403);
+        Controls.Add(cbxSaveDefaultFolder);
         Controls.Add(btnOpenFolder);
         Controls.Add(lbl_Title);
         Controls.Add(pbx_loadingGif);
@@ -470,6 +484,7 @@ partial class yotoDLForm
         MinimizeBox = false;
         Name = "yotoDLForm";
         Text = "Yoto - Youtube Audio Downloader";
+        FormClosing += yotoDLForm_FormClosing;
         Load += yotoDLForm_Load;
         groupBox1.ResumeLayout(false);
         groupBox1.PerformLayout();
@@ -511,4 +526,5 @@ partial class yotoDLForm
     private PictureBox pbx_loadingGif;
     private CheckBox cbx_Full;
     private Button btnOpenFolder;
+    private CheckBox cbxSaveDefaultFolder;
 }

@@ -27,8 +27,6 @@ public partial class yotoDLForm : Form
     private ProcessTypes ProcType { get; set; }
     public string YtDlpOutput { get; set; } = "";
 
-    public string startDir { get; set; }
-
     private string TrackTitle { get; set; }
     private string EndHr { get; set; }
     private string EndMin { get; set; }
@@ -65,18 +63,17 @@ public partial class yotoDLForm : Form
     {
         if (!string.IsNullOrEmpty(Settings.Default.DefaultFolder))
         {
-            startDir = Settings.Default.DefaultFolder;
+            cbxSaveDefaultFolder.Checked = true;
+            DirLocation = Settings.Default.DefaultFolder;
         }
         else
         {
-            startDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments).ToLower();
+            DirLocation = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments).ToLower();
         }
-
+        btnCancel.Visible = false;
         btnOpenFolderDia.Image = new Bitmap(SystemIcons.GetStockIcon(StockIconId.FolderOpen).ToBitmap());
-
-        tbxFolder.Text = startDir;
         ProcButton = AcceptButtonTypes.Process;
-        MessageBox.Show("I love you, Nat'e! You are the love of my life!", "Message to Nat'e Simone Morrell", buttons: MessageBoxButtons.OK);
+        MessageBox.Show("I love Nat'e! She is the love of my life!", "Message to Nat'e Simone Morrell", buttons: MessageBoxButtons.OK);
     }
 
     private void startEndTbxs_KeyPress(object sender, KeyPressEventArgs e)
@@ -90,13 +87,19 @@ public partial class yotoDLForm : Form
     private void btnOpenFolderDia_Click(object sender, EventArgs e)
     {
         FolderBrowserDialog FBD = new FolderBrowserDialog();
-        FBD.InitialDirectory = startDir;
+        FBD.InitialDirectory = DirLocation;
         if (FBD.ShowDialog() == DialogResult.OK)
         {
             if (!Directory.Exists(FBD.SelectedPath))
             {
                 Directory.CreateDirectory(FBD.SelectedPath);
             }
+            if (DirLocation != FBD.SelectedPath
+                && cbxSaveDefaultFolder.Checked)
+            {
+                cbxSaveDefaultFolder.Checked = false;
+            }
+
             DirLocation = FBD.SelectedPath;
         }
 
@@ -162,7 +165,7 @@ public partial class yotoDLForm : Form
 
 
             ProcessOutputVariables();
-            
+
         }
         ShowLoadingGif = false;
     }
@@ -211,9 +214,9 @@ public partial class yotoDLForm : Form
 
     private void ModifyFormValues()
     {
-        tbxEndHr.Text = EndHr;
-        tbxEndMin.Text = EndMin;
-        tbxEndSec.Text = EndSec;
+        tbxEndHr.Text = EndHr.Length == 1 ? $"0{EndHr}" : EndHr;
+        tbxEndMin.Text = EndMin.Length == 1 ? $"0{EndMin}" : EndMin;
+        tbxEndSec.Text = EndSec.Length == 1 ? $"0{EndSec}" : EndSec;
         lbl_Title.Text = $"\"{TrackTitle}\'";
     }
 
@@ -222,7 +225,6 @@ public partial class yotoDLForm : Form
         this.BeginInvoke((Action)(() =>
         {
             lbl.Left = (this.ClientSize.Width - lbl.Width) / 2;
-            // lbl.Top = (this.ClientSize.Height - lbl.Height) / 2; // Uncomment to center vertically as well
         }));
     }
 
@@ -318,7 +320,7 @@ public partial class yotoDLForm : Form
         {
             tbxEndHr.Enabled = false;
             tbxEndMin.Enabled = false;
-            tbxEndSec.Enabled = false; 
+            tbxEndSec.Enabled = false;
             tbxStartHr.Enabled = false;
             tbxStartMin.Enabled = false;
             tbxStartSec.Enabled = false;
@@ -331,6 +333,27 @@ public partial class yotoDLForm : Form
             tbxStartHr.Enabled = true;
             tbxStartMin.Enabled = true;
             tbxStartSec.Enabled = true;
+        }
+    }
+
+    private void btnOpenFolder_Click(object sender, EventArgs e)
+    {
+        using (var process = new Process())
+        {
+            process.StartInfo = new ProcessStartInfo("explorer.exe", DirLocation);
+
+            process.StartInfo.UseShellExecute = true;
+
+            process.Start();
+        }
+    }
+
+    private void yotoDLForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+        if (cbxSaveDefaultFolder.Checked)
+        {
+            Settings.Default.DefaultFolder = tbxFolder.Text;
+            Settings.Default.Save();
         }
     }
 
